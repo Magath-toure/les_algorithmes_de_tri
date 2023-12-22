@@ -35,5 +35,24 @@ def tri_2():
     print(f"Temps exécution TRI 2 = {end_time - start_time}") 
     return a_trier
 
+def tri_3():
+    start_time = time.time()
+    max_i = len(a_trier) - 1
+    continue_tri = True
+
+    while continue_tri:
+        continue_tri = False
+        for i in range(max_i):
+            if a_trier[i] > a_trier[i+1]:
+                # permutation des valeurs qui se trouvent dans i et i+1
+                a_trier[i], a_trier[i+1] = a_trier[i+1], a_trier[i]
+                continue_tri = True
+        max_i -= 1
+
+    end_time = time.time()
+    print(end_time - start_time)
+    return a_trier
+
 #print(tri_1())
 #print(tri_2())
+#print(tri_3())
